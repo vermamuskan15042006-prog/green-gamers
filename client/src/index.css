@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #07110d;
+    color: #ecfdf5;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  z-index: 1;
+}
+
+.gg-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.gg-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 185, 129, 0.35);
+  border-radius: 9999px;
+}
+
+@keyframes ggFloatXp {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.92);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(0) scale(1.04);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-24px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-42px) scale(0.96);
+  }
+}
+
+@keyframes ggToastPop {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.gg-float-xp {
+  animation: ggFloatXp 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.gg-toast-pop {
+  animation: ggToastPop 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes ggZzzFloat {
+  0%, 100% {
+    opacity: 0.25;
+    transform: translate(0, 4px) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(4px, -6px) scale(1.06);
+  }
+}
+
+@keyframes ggRobotBlink {
+  0%, 92%, 100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.12);
+  }
+}
+
+@keyframes ggSparklePulse {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.88);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+.gg-zzz {
+  animation: ggZzzFloat 2.4s ease-in-out infinite;
+}
+
+.gg-robot-blink {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: ggRobotBlink 4.6s ease-in-out infinite;
+}
+
+.gg-sparkle {
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: ggSparklePulse 1.8s ease-in-out infinite;
+}
